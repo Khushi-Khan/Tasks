@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events in JS</title>
+    <style>
+      .horiz {
+        display: flex;
+        padding: 80px;
+        border: 40px;
+        justify-content: space-evenly; 
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2-NUM-OPERATOR</h2>
+    <div class="horiz">
+      <label for="input1">NUMBER 1:</label>
+      <input type="number" id="num1" onchange="Calculate()" />
+      <hr>
+      <label for="input1">OPERATOR:</label>
+      <select name="op" id="op" onchange="Calculate()">
+        <option>Select</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <hr>
+      <label for="input2">NUMBER 2:</label>
+      <input type="number" id="num2" onchange="Calculate()" />
+      <hr>
+      <span class="sp" id="result"></span>
+    </div>
+    <script>
+      function Calculate() {
+        let n1 = Number(document.getElementById("num1").value);
+        let n2 = Number(document.getElementById("num2").value);
+        let op = document.getElementById("op").value;
+        let result;
+        if (n1 && n2 && op) {
+          if (op == "+") {
+            result = n1 + n2;
+          } else if (op == "-") {
+            result = n1 - n2;
+          } else if (op == "*") {
+            result = n1 * n2;
+          } else if (op == "/") {
+            result = n1 / n2;
+          }
+          document.getElementById("result").innerHTML = "Output =" + result;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible</title>
+    <style>
+        .btn {
+            background-color: rgb(188, 188, 188);
+            border: none;
+            outline: none;
+            font-size: 20px;
+            cursor: pointer;
+            width: 50%;
+        }
+        .active,
+        .btn:hover {
+            background-color: rgb(178, 208, 239);
+        }
+         
+        .txt {
+            display: none;
+            font-display: block;
+            font-size: 20px;
+        }
+        .lis{
+            display: none;
+            font-display: block;
+            font-size: 20px;
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <h1>COLLAPSIBLE SECTION</h1><hr>
+    <button type="button"  class="btn">VIEW</button>
+    <div class="txt">
+       Get to know us.
+    </div>
+    <button type="button" class="btn">ABOUT</button>
+    <div class="txt">
+     Check the About Me page.
+    </div>
+    <button type="button" class="btn">DETAILS</button>
+    <div class="txt">
+     Detailed description.
+     </div>
+     <button type="button" class="btn">ITEMS</button>
+     <div class="lis">
+      <ul>
+        <li>Product</li>
+        <li>Design</li>
+      </ul>
+      </div>
+    <script>
+        var n= document.getElementsByClassName("btn");
+        var x;
+        for(x=0;x < n.length;x++){
+        n[x].addEventListener("click", function(){
+            this.classList.toggle("active");
+        var text= this.nextElementSibling;
+        if(text.style.display === "block"){
+            text.style.display = "none";
+        }
+        else{
+            text.style.display = "block";
+        }
+        });
+    }
+    </script>
+</body>
+</html>

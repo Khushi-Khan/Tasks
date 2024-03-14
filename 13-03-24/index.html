@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        form{
+            font-family:  arial, sans-serif;
+            padding: 10px;
+            justify-content: space-around;
+        }
+        .addRow{
+            font-family: arial, sans-serif;
+            font-style: bold;
+            font-size: larger;
+            background-color: lightblue;
+            width: 200px;
+            height: 50px;
+        }
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd ;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: lightblue;
+        }
+        </style>
+</head>
+<body>
+    <h1>FORM</h1><hr>
+    <button class="addRow" id="addRow" onclick="input()">ADD ROW</button><hr>
+     <table>
+        <tr>
+        <th>Sr.No.</th>
+        <th>Name</th>
+        <th>Gmail</th>
+        <th>Action</th>
+        </tr>
+     </table><br>
+     <form>
+     <label for="input">Sr No:</label>
+      <input type="text" id="sr" name="ip" ><br><br>
+     <label for="input">Name:</label>
+      <input type="text" id="name" name="ip" ><br><br>
+     <label for="input">Gmail:</label>
+      <input type="text" id="gmail" name="ip"><br><br>
+     <label for="input">Action:</label>
+      <input type="text" id="action" name="ip"><br><br>
+     </form>
+    <script>
+        const Arr = [{ Sr: 1, Name: 'Sam', Gmail: 'x@gmail.com', Action: 'on' },
+        { Sr: 2, Name: 'Alia', Gmail: 'y.@gmail.com', Action: 'off' },
+        { Sr: 3, Name: 'Mark', Gmail: 'z.@gmail.com', Action: 'click' }]
+
+        function input(){
+            let object={
+                Sr: document.getElementById("sr").value, 
+                Name: document.getElementById("name").value, 
+                Gmail: document.getElementById("gmail").value, 
+                Action: document.getElementById("action").value
+            }
+            console.log(object);
+            Arr.push(object);
+    const table = document.querySelector('tbody')
+    Arr.forEach((item) => { 
+        table.innerHTML = table.innerHTML + `<tr>
+                <td>${item.Sr}</td>
+                <td>${item.Name}</td>
+                <td>${item.Gmail}</td>
+                <td>${item.Action}</td>
+            </tr>`
+    }) 
+}
+    </script>
+</body>
+</html>

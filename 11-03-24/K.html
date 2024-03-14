@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>JS Events</title>
+  </head>
+
+  <body>
+    <form>
+      <label for="input">INPUT:</label><br />
+        <input type="text" id="ip" name="ip" value=""  onchange="A()"><br /><br />
+      <p id="op"></p>
+    </form>
+    <script type="text/javascript">
+      function A() {
+        let txt=document.getElementById("ip").value;
+        document.getElementById("op").innerHTML=txt;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h1>ARRAYS</h1>
+    <script>
+        let A= [1,2,3,[4,5,6],7];
+        let D=[];
+        A.forEach((n) => {
+            if(typeof n === 'number'){
+                D.push(n);
+                console.log(D);
+            }
+            else  {
+                n.forEach((x) => {
+                    D.push(x);
+                });
+            }
+        });
+        console.log(D);
+    </script>
+</body>
+</html>
